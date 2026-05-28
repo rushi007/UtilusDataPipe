@@ -1,0 +1,30 @@
+apiVersion: skaffold/v4beta13
+kind: Config
+metadata:
+  name: utilusdatapipe
+build:
+  artifacts:
+    - image: utilusdatapipe
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  helm:
+    releases:
+      - name: utilusdatapipe
+        chartPath: helm/utilusdatapipe
+        valuesFiles:
+          - helm/utilusdatapipe/values.yaml
+        version: 0.1.0
+manifests:
+  helm:
+    releases:
+      - name: utilusdatapipe
+        chartPath: helm/utilusdatapipe
+        valuesFiles:
+          - helm/utilusdatapipe/values.yaml
+        version: 0.1.0
+portForward:
+  - resourceType: service
+    resourceName: utilusdatapipe
+    port: 8000
+    localPort: 8080
