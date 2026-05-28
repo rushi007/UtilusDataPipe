@@ -3,7 +3,7 @@
 Welcome to the **Data Pipe project** 
 
 A Python-based implementation of a Data Pipe system that processes data flow instructions from an input file, 
-validates them, and computes the resulting visited coordinates within a defined boundary.
+validates them, and computes the resulting metrics such as MRR, churn, and cohorts based on the provided customer and subscription data.
 
 This project demonstrates clean modular design, file-based execution, boundary validation, and automated testing using Pytest.
 
