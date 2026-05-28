@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, field_validator
 
 class CustomerModel(BaseModel):
     customer_id: str = Field(..., description="Unique customer ID")
-    signup_date: date = Field(..., description="Date and time the customer signed up")
-    country: str = Field(..., description="Country of the customer")
+    signup_date: date
+    country: Optional[str] = None
 
 class SubscriptionModel(BaseModel):
     customer_id: str = Field(..., description="Unique customer ID")
